@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	.inner
+		h2 Top #{stores.length} stores
+		table.table
+			thead
+				td photo
+				td ranking
+				td name
+				td reviews
+				td Average rating
+			each store,i in stores 
+				tr
+					td
+						a(href=`/store/${store.slug}`)
+							img(width="200" src=`/uploads/${store.photo || `bb7f7d60-9b0c-46b0-a0e4-1422d5752567.jpeg`}` alt=store.name)
+					td #{i + 1}
+					td: a(href=`/store/${store.slug}`)= store.name
+					td= store.Cool_reviews.length  
+					td  #{store.averageRating.toFixed(2)}
