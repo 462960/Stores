@@ -1,0 +1,2 @@
+# Stores
+NodeJS app. MongoDB.
